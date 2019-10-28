@@ -1,7 +1,8 @@
-import 'package:coffee_talk_ibp/src/mock/movies.dart';
 import 'package:coffee_talk_ibp/src/models/movie.dart';
 import 'package:flutter/material.dart';
 
+//TODO: Explain way to alias Library
+import 'package:coffee_talk_ibp/src/api/api.dart' as rest_api;
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -24,9 +25,12 @@ class _MyHomePageState extends State<MyHomePage> {
     _loadMovies();
   }
 
+  //TODO: Must use Async
   _loadMovies() {
-    // TODO init movies from Mock
-    // movies = getMockMovies();
+    MoviesResponse movieResponse = await rest_api.topRatedMovies();
+    setState(() {
+      movies = movieResponse.movies;
+    });
   }
 
   @override
@@ -37,24 +41,21 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: ListView.separated(
         padding: const EdgeInsets.all(8.0),
-        itemCount: movies.length,
+        itemCount: 3,
         itemBuilder: (BuildContext context, int index) {
           Movie movie = movies[index];
-          // TODO: Init originalTitle  = movie.originalTitle
-          final originalTitle;
-          // TODO: Init releaseDate  = movie.releaseDate
-          final releaseDate;
+          final originalTitle = movie.originalTitle;
+          final releaseDate = movie.originalTitle;
 
           return Container(
             height: 50,
             color: Colors.amber[colorCodes[index]],
             child: Center(
-                //TODO : Init Text for Movie
-                /*child: Text(
+              child: Text(
                 "$originalTitle - Date : $releaseDate",
                 style: TextStyle(height: 3.0),
-              ),*/
-                ),
+              ),
+            ),
           );
         },
         separatorBuilder: (BuildContext context, int index) => const Divider(),
