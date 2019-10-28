@@ -2,7 +2,6 @@
 import 'package:coffee_talk_ibp/src/models/movie.dart';
 import 'package:flutter/material.dart';
 
-// TODO: Example Sample Widget without state management
 class MovieWidget extends StatelessWidget {
 
   final Movie movie;

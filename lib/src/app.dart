@@ -1,3 +1,4 @@
+import 'package:coffee_talk_ibp/src/views/fav.dart';
 import 'package:coffee_talk_ibp/src/views/home.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Coffee Talk i-BP'),
+      // TODO: Use routes mecanism
+      /*
+      initialRoute: '/',
+      routes: <String, WidgetBuilder> {
+        '/': (context) => MyHomePage(title: 'Coffee Talk i-BP'),
+        '/favorites': (context) => FavPage()
+      },*/
     );
   }
 }
