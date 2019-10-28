@@ -10,14 +10,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Coffee Talk i-BP'),
-      // TODO: 2- Use routes mecanism
-      /*
       initialRoute: '/',
-      routes: <String, WidgetBuilder> {
+      routes: <String, WidgetBuilder>{
         '/': (context) => MyHomePage(title: 'Coffee Talk i-BP'),
         '/favorites': (context) => FavPage()
-      },*/
+      },
     );
   }
 }

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-class ToBeRemove {
-  //TODO 1- Create Second page StatelessWidget  : FavPage
-}
-
-/*
- Scaffold(
+class FavPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
         title: const Text('Favorites'),
       ),
@@ -15,4 +13,5 @@ class ToBeRemove {
         ),
       ),
     );
- */
+  }
+}

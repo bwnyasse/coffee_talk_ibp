@@ -33,7 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  //TODO: 3- Explain Navigation POP & PUSH
   _handleShowFavorites() => Navigator.popAndPushNamed(context, '/favorites');
 
   // Drawer is a ListView with entries
@@ -43,9 +42,9 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           DrawerHeader(
             child: Container(
-              //TODO : 5- Use Image.asset("images/ibp.png",)
-              //TODO : 6- Explain how to ensure image from pubspec.yaml
-              child: Text("Menu"),
+              child: Image.asset(
+                "images/ibp.png",
+              ),
             ),
           ),
           const ListTile(
@@ -70,7 +69,6 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      //TODO: 4- Explain Way to display Drawer
       drawer: _buildDrawer(context),
       body: ListView.separated(
         padding: const EdgeInsets.all(8.0),
