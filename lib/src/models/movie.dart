@@ -1,8 +1,5 @@
-//TODO: Explain update in pubspec.yaml
 import 'package:json_annotation/json_annotation.dart';
 
-//TODO : Must generated with -  flutter pub run build_runner build
-//TODO: Doc https://flutter.dev/docs/development/data-and-backend/json
 part 'movie.g.dart';
 
 @JsonSerializable()
