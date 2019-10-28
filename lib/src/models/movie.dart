@@ -1,8 +1,5 @@
-//TODO: Explain update in pubspec.yaml
 import 'package:json_annotation/json_annotation.dart';
 
-//TODO : Must generated with -  flutter pub run build_runner build
-//TODO: Doc https://flutter.dev/docs/development/data-and-backend/json
 part 'movie.g.dart';
 
 @JsonSerializable()
@@ -25,8 +22,10 @@ class MoviesResponse {
     this.movies,
   });
 
-  factory MoviesResponse.fromJson(Map<String, dynamic> json) =>
+ factory MoviesResponse.fromJson(Map<String, dynamic> json) =>
       _$MoviesResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MoviesResponseToJson(this);
 }
 
 //////////////////
@@ -75,4 +74,6 @@ class Movie {
   Movie({this.id});
 
   factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MovieToJson(this);
 }
