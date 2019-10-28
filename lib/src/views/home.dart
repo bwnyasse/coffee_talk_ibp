@@ -1,7 +1,6 @@
 import 'package:coffee_talk_ibp/src/models/movie.dart';
 import 'package:flutter/material.dart';
 
-//TODO: Explain way to alias Library
 import 'package:coffee_talk_ibp/src/api/api.dart' as rest_api;
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -25,8 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _loadMovies();
   }
 
-  //TODO: Must use Async
-  _loadMovies() {
+  _loadMovies() async {
     MoviesResponse movieResponse = await rest_api.topRatedMovies();
     setState(() {
       movies = movieResponse.movies;
@@ -47,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
           final originalTitle = movie.originalTitle;
           final releaseDate = movie.originalTitle;
 
+
           return Container(
             height: 50,
             color: Colors.amber[colorCodes[index]],
@@ -57,6 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           );
+          //TODO : Use Movie Widget instead
+          // return MovieWidget(movie);
         },
         separatorBuilder: (BuildContext context, int index) => const Divider(),
       ),
